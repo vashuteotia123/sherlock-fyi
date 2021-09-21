@@ -1,8 +1,49 @@
-{% extends 'quest/base.html' %} {% load crispy_forms_tags %} {% block css %}
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+{% extends 'quest/base.html' %} {% load crispy_forms_tags %} {%block css %}
+<style>
+  .centered {
+    text-align: center;
+  }
+  .cover1 {
+    height: 100vh;
+    width: 100%;
+    background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.05)),
+      to(rgba(0, 0, 0, 0))
+    );
+    background: -webkit-linear-gradient(
+      top,
+      rgba(0, 0, 0, 0.05) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.05) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    margin-top: -150px;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+  }
+  @media all and (max-width: 800px) {
+    .cover {
+      margin-top: -80px;
+      padding: 20px;
+    }
+  }
+</style>
 {%endblock css %} {% block content %}
-<div class="w3-container">
-  <h1 align="center">LEADERBOARD</h1>
+<div class="cover1 centered">
+  <h1>Leaderboard</h1>
   <table class="w3-table w3-striped w3-border w3-center-align" width="80%">
     <tr class="w3-center w3-blue">
       <th>Name</th>
