@@ -1,0 +1,23 @@
+{% extends 'quest/base.html' %} {% load crispy_forms_tags %} {% block css %}
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+{%endblock css %} {% block content %}
+<div class="w3-container">
+  <h1 align="center">LEADERBOARD</h1>
+  <table class="w3-table w3-striped w3-border w3-center-align" width="80%">
+    <tr class="w3-center w3-blue">
+      <th>Name</th>
+      <th>Username</th>
+      <th>Points</th>
+      <th>Last Solved</th>
+    </tr>
+    {% for user in list%}
+    <tr>
+      <td>{{ user.name }}</td>
+      <td>{{ user.username }}</td>
+      <td>{{user.points}}</td>
+      <td>{{user.time}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}
