@@ -1,9 +1,10 @@
 from django.db import models
 from django.utils import timezone
+from tinymce.models import HTMLField
 
 # Create your models here.
 class Question(models.Model):
-	question = models.TextField()
+	question = HTMLField(blank=True, null=True)
 	answer = models.CharField(max_length=32, default=None)
 	points = models.PositiveIntegerField(default=5)
 	level = models.PositiveIntegerField()

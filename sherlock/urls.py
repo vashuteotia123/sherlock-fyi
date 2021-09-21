@@ -33,4 +33,8 @@ urlpatterns = [
 	path('quiz/', quiz_view.quiz, name='quiz'),
 	path('leaderboard/', quiz_view.leaderboard, name='leaderboard'),
 	path('completed/', quiz_view.completed, name='completed'),
+    path('tinymce/', include('tinymce.urls')),
+	path('ckeditor/',include('ckeditor_uploader.urls'))
 ]
+
+
