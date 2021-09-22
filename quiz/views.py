@@ -74,6 +74,14 @@ def completed(request):
 
 @login_required
 def map(request):
+	req = request.user.username
+	try:
+		temp_stud = stud.objects.get(username=req)
+	except stud.DoesNotExist:
+		temp_stud = False
+	if not temp_stud:
+		temp_user = User.objects.get(username=req)
+		stud.objects.create(name=temp_user.first_name, username=req)	
 	temp_username = request.user.username
 	temp_stud = stud.objects.get(username=temp_username)
 	level = temp_stud.lql
