@@ -2,23 +2,9 @@
 {% block css %}
 <style>
   .cover1 {
-    background: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      from(rgba(0, 0, 0, 0.05)),
-      to(rgba(0, 0, 0, 0))
-    );
-    background: -webkit-linear-gradient(
-      top,
-      rgba(0, 0, 0, 0.05) 0%,
-      rgba(0, 0, 0, 0) 100%
-    );
-    background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.05) 0%,
-      rgba(0, 0, 0, 0) 100%
-    );
+    background: url("https://elisefrappier.com/wp-content/uploads/2018/09/BOND_Jumanji_Jaguar_Mtn_Asset.jpg")
+      no-repeat center center fixed;
+    color: white;
     padding: 80px 50px;
     display: -webkit-box;
     display: flex;
@@ -29,6 +15,29 @@
     justify-content: center;
     -webkit-box-align: center;
     align-items: center;
+    font-size: 25px;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: multiply;
+  }
+  header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    padding: 10px 100px 0;
+    font-weight: 800;
+    background: linear-gradient(to top, transparent, rgba(26, 16, 16));
+  }
+  a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.9;
   }
 </style>
 <script src="{% static 'tinymce/tinymce.min.js' %}"></script>

@@ -1,0 +1,171 @@
+{% extends 'quest/base.html' %} {% block css %}
+<title>Map</title>
+<link
+  href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic"
+  rel="stylesheet"
+  type="text/css"
+/>
+<style>
+  body {
+    font-family: "Lato", sans-serif;
+    margin: 0;
+    background: url("https://cutewallpaper.org/21/wallpapers-jungle/69+-Jungle-Wallpapers-on-WallpaperPlay.jpg")
+      no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    color: #000000;
+  }
+
+  img {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  h1 {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20;
+    color: rgb(33, 4, 49);
+  }
+  a {
+    color: ;
+  }
+</style>
+{% endblock css %} {% block content %}
+<h1>Journey Begins</h1>
+<img
+  src="https://lh3.googleusercontent.com/zfxCvGB2WMo939bPWHrahDbvwbD18CLoFBGiTFconDDgTfsj2z2XqY1UBSkO9lFzFafnpDMeGEdQDdjQuS5CpkNJGaWfSAPzOYjQaT_T20zmOr8p3A6qZLwJajy_xv32JAf4odwo2pI=s0"
+  usemap="#image_map"
+/>
+
+<map name="image_map">
+  {% ifequal level 1 %}
+  <area
+    target=""
+    alt="L 1"
+    title="L 1"
+    href="{% url 'quiz' %}"
+    coords="165,120,57"
+    shape="circle"
+  />
+  {% else %}
+  <area
+    target=""
+    alt="Level 1"
+    title="Level 1"
+    href=""
+    coords="165,120,57"
+    shape="circle"
+  />
+  {% endifequal %} {% ifequal level 2%}
+  <area
+    alt="L 2"
+    title="L 2"
+    href="{% url 'quiz' %}"
+    coords="152,376,34"
+    shape="circle"
+  />
+  {% else %}
+  <area alt="L 2" title="L 2" href="" coords="152,376,34" shape="circle" />
+  {% endifequal %} {% ifequal level 3 %}
+  <area
+    alt=" L 3 "
+    title=" L 3 "
+    href="{% url 'quiz' %}"
+    coords="292,501,36"
+    shape="circle"
+  />
+  {% else %}
+  <area alt=" L 3 " title=" L 3 " href="" coords="292,501,36" shape="circle" />
+  {% endifequal %} {% ifequal level 4%}
+  <area
+    alt="L 4"
+    title="L 4"
+    href="{% url 'quiz' %}"
+    coords="310,149,38"
+    shape="circle"
+  />
+  {% else %}
+  <area alt="L 4" title="L 4" href="" coords="310,149,38" shape="circle" />
+  {% endifequal %} {% ifequal level 5 %}
+  <area
+    alt="L 5"
+    title="L 5"
+    href="{% url 'quiz' %}"
+    coords="449,479,35"
+    shape="circle"
+  />
+  {% else %}
+  <area alt="L 5" title="L 5" href="" coords="449,479,35" shape="circle" />
+  {% endifequal %} {% ifequal level 6%}
+  <area
+    alt="L 6"
+    title="L 6"
+    href="{% url 'quiz' %}"
+    coords="589,442,43"
+    shape="circle"
+  />
+  {% else %}
+  <area alt="L 6" title="L 6" href="" coords="589,442,43" shape="circle" />
+  {% endifequal %} {% ifequal level 7%}
+  <area
+    alt="L 7"
+    title="L 7"
+    href="{% url 'quiz' %}"
+    coords="607,139,38"
+    shape="circle"
+  />
+  {% else %}
+  <area alt="L 7" title="L 7" href="" coords="607,139,38" shape="circle" />
+  {% endifequal %}
+  {% ifequal level 8 %}
+  <area
+    alt="L 8"
+    title="L 8"
+    href="{% url 'quiz' %}"
+    coords="719,369,43"
+    shape="circle"
+  />
+  {% else %}
+  <area
+    alt="L 8"
+    title="L 8"
+    href=""
+    coords="719,369,43"
+    shape="circle"
+  />
+  {% endifequal %}
+</map>
+<script>
+  var image = $("#image_map");
+  image
+    .mapster({
+      fillOpacity: 0.1,
+      fillColor: "d42e16",
+      isSelectable: false,
+      singleSelect: true,
+      mapKey: "name",
+      listKey: "name",
+      toolTipContainer:
+        '<div style="width:100px; height:100px; color:#BBBBBB"> </div>',
+      showToolTip: true,
+      toolTipClose: ["area-mouseout"],
+      areas: [
+        {
+          key: "northwest",
+          toolTip: nwTooltip,
+        },
+        {
+          key: "centralwest",
+          toolTip: cwTooltip,
+        },
+      ],
+    })
+    .mapster("tooltip", "northwest");
+</script>
+
+{% endblock %}
