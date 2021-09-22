@@ -1,13 +1,19 @@
 {% extends 'quest/base.html' %} {% load static %} {% load crispy_forms_tags %}
 {% block css %}
 <style>
-  .cover1 {
+  body {
+    font-family: "Lato", sans-serif;
+    margin: 0;
     background: url("https://elisefrappier.com/wp-content/uploads/2018/09/BOND_Jumanji_Jaguar_Mtn_Asset.jpg")
       no-repeat fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
-    -o-background-size: cover;
     background-size: cover;
+    color: #0a0a0b;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: multiply;
+  }
+  .cover1 {
     color: white;
     padding: 80px 50px;
     display: -webkit-box;
@@ -20,8 +26,6 @@
     -webkit-box-align: center;
     align-items: center;
     font-size: 25px;
-    background-color: rgba(0, 0, 0, 0.5);
-    background-blend-mode: multiply;
   }
   header {
     position: absolute;
