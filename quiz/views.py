@@ -4,6 +4,8 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from .models import Question, Answer, stud
 from .forms import QuestionForm, PlayForm
+from django.urls import reverse
+
 # Create your views here.
 @login_required
 @permission_required('quest.change_quest', raise_exception=True)
@@ -36,9 +38,10 @@ def quiz(request):
 			points = ans.points
 			if answ == answer:
 				temp_stud.lqlpoints(points)
-			form.save()
-			obs = Answer.objects.all()
-			obs.delete()
+				form.save()
+				obs = Answer.objects.all()
+				obs.delete()
+				return redirect(map)
 			return redirect(quiz)
 	else:
 		form = PlayForm()
@@ -55,7 +58,7 @@ def quiz(request):
 	if(lvl == 9):
 		return redirect('completed')
 	ask = Question.objects.get(level=lvl)
-	return render(request, 'quiz/question.html', {'form': form, 'ask': ask})
+	return render(request, 'quiz/question.html', {'form': form, 'ask': ask, "level": lvl})
 
 def leaderboard(request):
 	stud_list = stud.objects.all().order_by('-points')

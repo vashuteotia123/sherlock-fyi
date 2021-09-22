@@ -29,14 +29,13 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 20;
-    color: rgb(33, 4, 49);
-  }
-  a {
-    color: ;
+    color: white;
+    background-color: rgb(58, 67, 163);
+    background: multiply;
   }
 </style>
 {% endblock css %} {% block content %}
-<h1>Journey Begins</h1>
+<h1>Level {{level}}</h1>
 <img
   src="https://lh3.googleusercontent.com/zfxCvGB2WMo939bPWHrahDbvwbD18CLoFBGiTFconDDgTfsj2z2XqY1UBSkO9lFzFafnpDMeGEdQDdjQuS5CpkNJGaWfSAPzOYjQaT_T20zmOr8p3A6qZLwJajy_xv32JAf4odwo2pI=s0"
   usemap="#image_map"
@@ -61,7 +60,7 @@
     coords="165,120,57"
     shape="circle"
   />
-  {% endifequal %} {% ifequal level 2%}
+  {% endifequal %} {% ifequal level 2 %}
   <area
     alt="L 2"
     title="L 2"
@@ -81,7 +80,7 @@
   />
   {% else %}
   <area alt=" L 3 " title=" L 3 " href="" coords="292,501,36" shape="circle" />
-  {% endifequal %} {% ifequal level 4%}
+  {% endifequal %} {% ifequal level 4 %}
   <area
     alt="L 4"
     title="L 4"
@@ -101,7 +100,7 @@
   />
   {% else %}
   <area alt="L 5" title="L 5" href="" coords="449,479,35" shape="circle" />
-  {% endifequal %} {% ifequal level 6%}
+  {% endifequal %} {% ifequal level 6 %}
   <area
     alt="L 6"
     title="L 6"
@@ -111,7 +110,7 @@
   />
   {% else %}
   <area alt="L 6" title="L 6" href="" coords="589,442,43" shape="circle" />
-  {% endifequal %} {% ifequal level 7%}
+  {% endifequal %} {% ifequal level 7 %}
   <area
     alt="L 7"
     title="L 7"
@@ -121,8 +120,7 @@
   />
   {% else %}
   <area alt="L 7" title="L 7" href="" coords="607,139,38" shape="circle" />
-  {% endifequal %}
-  {% ifequal level 8 %}
+  {% endifequal %} {% ifequal level 8 %}
   <area
     alt="L 8"
     title="L 8"
@@ -131,13 +129,7 @@
     shape="circle"
   />
   {% else %}
-  <area
-    alt="L 8"
-    title="L 8"
-    href=""
-    coords="719,369,43"
-    shape="circle"
-  />
+  <area alt="L 8" title="L 8" href="" coords="719,369,43" shape="circle" />
   {% endifequal %}
 </map>
 <script>
