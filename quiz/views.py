@@ -76,4 +76,6 @@ def map(request):
 	temp_username = request.user.username
 	temp_stud = stud.objects.get(username=temp_username)
 	level = temp_stud.lql
+	if(level >= 9):
+		return redirect('completed')
 	return render(request, 'quiz/map.html', context = {"level" : level})
