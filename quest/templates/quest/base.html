@@ -150,21 +150,20 @@
         align-items: center;
       }
 
-      .flex-form a {
+      .flex-form a, .flex-form input[type="submit"] {
         background: #ef3f5a;
         border: 1px solid #ef3f5a;
         color: #fff;
         padding: 0 30px;
         cursor: pointer;
-
         -webkit-transition: all 0.2s;
         -moz-transition: all 0.2s;
         transition: all 0.2s;
       }
 
       .flex-form input[type="submit"]:hover {
-        background: #d73851;
-        border: 1px solid #d73851;
+        background: rgba(215, 56, 81, .8);
+        border: 1px solid rgba(215, 56, 81, .8);
       }
 
       .flex-form {
@@ -177,12 +176,13 @@
 
       .flex-form > * {
         border: 0;
-
+        color: #000;
         background: #fff;
         line-height: 50px;
         font-size: 1rem;
         border-radius: 0;
         outline: 0;
+        padding-left:20px;
         -webkit-appearance: none;
       }
 
