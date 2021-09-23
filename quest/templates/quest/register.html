@@ -1,4 +1,19 @@
 {% extends 'quest/base.html' %} {% load crispy_forms_tags %} {% block content %}
+<style>
+  a{
+    color: #FFF;
+  }
+  .cover{
+    margin: 0;
+    background: url("https://wallpapercave.com/wp/wp2332438.jpg") no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    color: #FFF;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: multiply;
+  }
+</style>
 <div class="cover">
   <form method="POST">
     {% csrf_token %}
