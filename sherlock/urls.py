@@ -21,13 +21,13 @@ from quiz import views as quiz_view
 
 urlpatterns = [
 	path('admin/', admin.site.urls),
-	path('register/', quest_view.register, name='register'),
-	path('faq/', quiz_view.faq, name='faq'),
-	path('profile/edit/', quest_view.edit, name='edit'),
+	# path('register/', quest_view.register, name='register'),
+	# path('faq/', quiz_view.faq, name='faq'),
+	# path('profile/edit/', quest_view.edit, name='edit'),
 	path('login/', auth_views.LoginView.as_view(template_name='quest/login.html'), name='login'),
 	path('logout/', auth_views.LogoutView.as_view(template_name='quest/logout.html'), name='logout'),
-	path('profile/', quest_view.profile, name='profile'),
-	path('profile/password/', quest_view.change_password, name='change_password'),
+	# path('profile/', quest_view.profile, name='profile'),
+	# path('profile/password/', quest_view.change_password, name='change_password'),
 	path('question/', quiz_view.question, name='question'),
 	path('', quest_view.home, name='home'),
 	path('quiz/', quiz_view.quiz, name='quiz'),

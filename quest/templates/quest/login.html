@@ -46,7 +46,7 @@
   <form method="POST">
     {% csrf_token %}
     <fieldset class="form-group form_data">
-      <legend class="bottom-border mb4">Join Today</legend>
+      <legend class="bottom-border mb4">Let's go</legend>
       {{ form|crispy }}
     </fieldset>
     <div class="form-group">
@@ -55,8 +55,6 @@
   </form>
   <div class="border-top pt-3">
     <small class="text-muted">
-      Already have an account.
-      <a class="ml-2" href="{% url 'register' %}">Sign Up</a>
     </small>
   </div>
   <br />
